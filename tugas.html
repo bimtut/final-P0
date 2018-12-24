@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Latihan DOM</title>
+    <!-- <link rel="stylesheet" type="text/css" href="tugas.css"> -->
+    <style>
+        body {
+        /* display: grid; */
+        text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            width: 100%;
+            height: 100%;
+            grid-template-rows: 1fr 6fr 1fr;
+        }
+
+        .a {
+            grid-row-start: 1;
+        }
+
+        .b {
+            display: grid;
+            align-items: center;
+        }
+
+        .b h1 {
+            display: inline-block;
+            align-content: center;
+            text-align: center;
+            width: 100%;
+            font-family: sans-serif;
+            color: #333;
+            font-size: 40px;
+            opacity: 0.5;
+        }
+
+        /* .c {
+            grid-row-start: -1;
+        } */
+
+        .bulet1 {
+            border: 1px solid #dedede;
+            width: 70px;
+            height: 70px;
+            margin: auto;
+            border-radius: 50%;
+            background-color: lightblue;
+            display: inline-block;
+        }
+        .bulet1:hover {
+            border: 1px solid #dedede;
+            background-color: lightblue;
+            opacity: 0.5;
+        }
+
+        .bulet2 {
+            border: 1px solid #dedede;
+            width: 70px;
+            height: 70px;
+            margin: auto;
+            border-radius: 50%;
+            background-color: lightgreen;
+            display: inline-block;
+        }
+        .bulet2:hover {
+            border: 1px solid #dedede;
+            background-color: lightgreen;
+            opacity: 0.5;
+        }
+
+        .bulet3 {
+            border: 1px solid #dedede;
+            width: 70px;
+            height: 70px;
+            margin: auto;
+            border-radius: 50%;
+            background-color: pink;
+            display: inline-block;
+        }
+        .bulet3:hover {
+            border: 1px solid #dedede;
+            background-color: pink;
+            opacity: 0.5;
+        }
+
+        .bulet4 {
+            border: 1px solid #dedede;
+            width: 70px;
+            height: 70px;
+            margin: auto;
+            border-radius: 50%;
+            background-color: orange;
+            display: inline-block;
+        }
+        .bulet4:hover {
+            border: 1px solid #dedede;
+            background-color: orange;
+            opacity: 0.5;
+        }
+
+        .bulet5 {
+            border: 1px solid #dedede;
+            width: 70px;
+            height: 70px;
+            margin: auto;
+            border-radius: 50%;
+            background-color: lightcoral;
+            display: inline-block;
+        }
+        .bulet5:hover {
+            border: 1px solid #dedede;
+            background-color: lightcoral;
+            opacity: 0.5;
+        }
+
+        .bulet6 {
+            border: 1px solid #dedede;
+            width: 70px;
+            height: 70px;
+            margin: auto;
+            border-radius: 50%;
+            background-color: lightcyan;
+            display: inline-block;
+        }
+        .bulet6:hover {
+            border: 1px solid #dedede;
+            background-color: lightcyan;
+            opacity: 0.5;
+        } 
+
+        .bulet7 {
+            border: 1px solid #dedede;
+            width: 70px;
+            height: 70px;
+            margin: auto;
+            border-radius: 50%;
+            background-color: lawngreen;
+            display: inline-block;
+        }
+        .bulet7:hover {
+            border: 1px solid #dedede;
+            background-color: lawngreen;
+            opacity: 0.5;
+        } 
+
+        .bulet8 {
+            border: 1px solid #dedede;
+            width: 70px;
+            height: 70px;
+            margin: auto;
+            border-radius: 50%;
+            background-color: rgb(168, 98, 177);
+            display: inline-block;
+        }
+        .bulet8:hover {
+            border: 1px solid #dedede;
+            background-color: rgb(168, 98, 177);
+            opacity: 0.5;
+        }
+
+        .bulet9 {
+            border: 1px solid #dedede;
+            width: 70px;
+            height: 70px;
+            margin: auto;
+            border-radius: 50%;
+            background-color: rgb(162, 170, 43);
+            display: inline-block;
+        }
+        .bulet9:hover {
+            border: 1px solid #dedede;
+            background-color: rgb(162, 170, 43);
+            opacity: 0.5;
+        }
+
+        .bulet10 {
+            border: 1px solid #dedede;
+            width: 70px;
+            height: 70px;
+            margin: auto;
+            border-radius: 50%;
+            background-color: rgb(82, 10, 38);
+            display: inline-block;
+        }
+        .bulet10:hover {
+            border: 1px solid #dedede;
+            background-color: rgb(82, 10, 38);
+            opacity: 0.5;
+        }
+
+        .bulet11 {
+            border: 1px solid #dedede;
+            width: 70px;
+            height: 70px;
+            margin: auto;
+            border-radius: 50%;
+            background-color: rgba(255, 51, 0, 0.986);
+            display: inline-block;
+        }
+        .bulet11:hover {
+            border: 1px solid #dedede;
+            background-color: rgba(255, 51, 0, 0.986);
+            opacity: 0.5;
+        }
+
+        .bulet12 {
+            border: 1px solid #dedede;
+            width: 70px;
+            height: 70px;
+            margin: auto;
+            border-radius: 50%;
+            background-color: rgb(213, 197, 221);
+            display: inline-block;
+        }
+        .bulet12:hover {
+            border: 1px solid #dedede;
+            background-color: rgb(213, 197, 221);
+            opacity: 0.5;
+        }
+
+        .bulet13 {
+            border: 1px solid #dedede;
+            width: 70px;
+            height: 70px;
+            margin: auto;
+            border-radius: 50%;
+            background-color: rgb(36, 204, 204);
+            display: inline-block;
+        }
+        .bulet13:hover {
+            border: 1px solid #dedede;
+            background-color: rgb(36, 204, 204);
+            opacity: 0.5;
+        } 
+
+        .bulet14 {
+            border: 1px solid #dedede;
+            width: 70px;
+            height: 70px;
+            margin: auto;
+            border-radius: 50%;
+            background-color: rgb(109, 63, 33);
+            display: inline-block;
+        }
+        .bulet14:hover {
+            border: 1px solid #dedede;
+            background-color: rgb(109, 63, 33);
+            opacity: 0.5;
+        }
+
+        .bulet15 {
+            border: 1px solid #dedede;
+            width: 70px;
+            height: 70px;
+            margin: auto;
+            border-radius: 50%;
+            background-color: rgb(195, 173, 230);
+            display: inline-block;
+        }
+        .bulet15:hover {
+            border: 1px solid #dedede;
+            background-color: rgb(195, 173, 230);
+            opacity: 0.5;
+        }
+
+        .bulet16 {
+            border: 1px solid #dedede;
+            width: 70px;
+            height: 70px;
+            margin: auto;
+            border-radius: 50%;
+            background-color: rgb(5, 88, 5);
+            display: inline-block;
+        }
+        .bulet16:hover {
+            border: 1px solid #dedede;
+            background-color: rgb(5, 88, 5);
+            opacity: 0.5;
+        }
+
+        .bulet17 {
+            border: 1px solid #dedede;
+            width: 70px;
+            height: 70px;
+            margin: auto;
+            border-radius: 50%;
+            background-color: rgb(111, 48, 148);
+            display: inline-block;
+        }
+        .bulet17:hover {
+            border: 1px solid #dedede;
+            background-color: rgb(111, 48, 148);
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="a">
+            <div class="bulet1">
+            </div>
+            <div class="bulet2">
+            </div>
+            <div class="bulet3">
+            </div>
+            <div class="bulet4">
+            </div>
+            <div class="bulet5">
+            </div>
+            <div class="bulet6">
+            </div>
+            <div class="bulet7">
+            </div>
+            <div class="bulet8">
+            </div>
+            <div class="bulet9">
+            </div>
+            <div class="bulet10">
+            </div>
+            <div class="bulet11">
+            </div>
+            <div class="bulet12">
+            </div>
+            <div class="bulet13">
+            </div>
+            <div class="bulet14">
+            </div>
+            <div class="bulet15">
+            </div>
+            <div class="bulet16">
+            </div>
+            <div class="bulet17">
+            </div>
+            
+        </div>
+        <div class="b">
+            <h1>KISANAK, PILIHLAH WARNAMU :) </h1>
+        </div>
+        <!-- <div class="c">
+                <div class="bulet1">
+                </div>
+                <div class="bulet2">
+                </div>
+                <div class="bulet3">
+                </div>
+                <div class="bulet4">
+                </div>
+                <div class="bulet5">
+                </div>
+                <div class="bulet6">
+                </div>
+                <div class="bulet7">
+                </div>
+                <div class="bulet8">
+                </div>
+                <div class="bulet9">
+                </div>
+                <div class="bulet10">
+                </div>
+                <div class="bulet11">
+                </div>
+                <div class="bulet12">
+                </div>
+                <div class="bulet13">
+                </div>
+                <div class="bulet14">
+                </div>
+                <div class="bulet15">
+                </div>
+                <div class="bulet16">
+                </div>
+                <div class="bulet17">
+                </div>
+                    
+        </div> -->
+    </div>
+    
+    
+ <script src="tugas.js"></script>   
+</body>
+</html>
